@@ -1,0 +1,45 @@
+MD5      test passed!
+SHA      test passed!
+SHA-256  test passed!
+SHA-384  test passed!
+SHA-512  test passed!
+HMAC-MD5 test passed!
+HMAC-SHA test passed!
+HMAC-SHA256 test passed!
+HMAC-SHA384 test passed!
+HMAC-SHA512 test passed!
+GMAC     test passed!
+ARC4     test passed!
+Chacha   test passed!
+POLY1305 test passed!
+ChaCha20-Poly1305 AEAD test passed!
+DES      test passed!
+DES3     test passed!
+AES      test passed!
+AES-GCM  test passed!
+RANDOM   test passed!
+RSA      test passed!
+DH       test passed!
+OPENSSL  test passed!
+ECC      test passed!
+peer's cert info:
+ issuer : /C=US/ST=Montana/L=Bozeman/O=wolfSSL_2048/OU=Programming-2048/CN=www.wolfssl.com/emailAddress=info@wolfssl.com
+ subject: /C=US/ST=Montana/L=Bozeman/O=wolfSSL_2048/OU=Programming-2048/CN=www.wolfssl.com/emailAddress=info@wolfssl.com
+ serial number:aa:27:b3:c5:a9:72:6e:0d 
+SSL version is TLSv1.2
+SSL cipher suite is TLS_RSA_WITH_AES_256_CBC_SHA256
+peer's cert info:
+ issuer : /C=US/ST=Montana/L=Bozeman/O=Sawtooth/OU=Consulting/CN=www.wolfssl.com/emailAddress=info@wolfssl.com
+ subject: /C=US/ST=Montana/L=Bozeman/O=wolfSSL/OU=Support/CN=www.wolfssl.com/emailAddress=info@wolfssl.com
+ serial number:01 
+SSL version is TLSv1.2
+SSL cipher suite is TLS_RSA_WITH_AES_256_CBC_SHA256
+Client message: hello wolfssl!
+Server response: I hear you fa shizzle!
+sending server shutdown command: quit!
+client sent quit command: shutting down!
+ciphers = RC4-SHA:RC4-MD5:DES-CBC3-SHA:AES128-SHA:AES256-SHA:DHE-RSA-AES128-SHA:DHE-RSA-AES256-SHA:ECDHE-RSA-AES128-SHA:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-ECDSA-AES256-SHA:ECDHE-RSA-RC4-SHA:ECDHE-RSA-DES-CBC3-SHA:ECDHE-ECDSA-RC4-SHA:ECDHE-ECDSA-DES-CBC3-SHA:AES128-SHA256:AES256-SHA256:DHE-RSA-AES128-SHA256:DHE-RSA-AES256-SHA256:AES128-GCM-SHA256:AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-CHACHA20-POLY1305:DHE-RSA-CHACHA20-POLY1305
+9a104af3d164e37c0dabe3316f7bc35b9be5fd771a09ea1cda478d4057f0b06e  input
+9a104af3d164e37c0dabe3316f7bc35b9be5fd771a09ea1cda478d4057f0b06e  /tmp/output-moScSB
+
+All tests passed!

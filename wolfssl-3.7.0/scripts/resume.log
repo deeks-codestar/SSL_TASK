@@ -1,0 +1,31 @@
+-e 
+Starting example server for resume test...
+
+-e waiting for server_ready file...
+peer's cert info:
+ issuer : /C=US/ST=Montana/L=Bozeman/O=wolfSSL_2048/OU=Programming-2048/CN=www.wolfssl.com/emailAddress=info@wolfssl.com
+ subject: /C=US/ST=Montana/L=Bozeman/O=wolfSSL_2048/OU=Programming-2048/CN=www.wolfssl.com/emailAddress=info@wolfssl.com
+ serial number:aa:27:b3:c5:a9:72:6e:0d 
+SSL version is TLSv1.2
+SSL cipher suite is TLS_RSA_WITH_AES_256_CBC_SHA256
+Client message: hello wolfssl!
+peer has no cert!
+SSL version is TLSv1.2
+SSL cipher suite is TLS_RSA_WITH_AES_256_CBC_SHA256
+Client message: resuming wolfssl!
+peer's cert info:
+ issuer : /C=US/ST=Montana/L=Bozeman/O=Sawtooth/OU=Consulting/CN=www.wolfssl.com/emailAddress=info@wolfssl.com
+ subject: /C=US/ST=Montana/L=Bozeman/O=wolfSSL/OU=Support/CN=www.wolfssl.com/emailAddress=info@wolfssl.com
+ serial number:01 
+SSL version is TLSv1.2
+SSL cipher suite is TLS_RSA_WITH_AES_256_CBC_SHA256
+Server response: I hear you fa shizzle!
+peer has no cert!
+SSL version is TLSv1.2
+SSL cipher suite is NONE
+reused session id
+Server resume response: I hear you fa shizzle!
+-e removing exisitng server_ready file
+-e 
+Success!
+

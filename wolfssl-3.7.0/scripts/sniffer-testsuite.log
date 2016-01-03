@@ -1,0 +1,358 @@
+-e 
+Staring snifftest on testsuite.pcap...
+
+SSL App Data(29:13):hello cyassl!
+SSL App Data(31:23):I hear you fa shizzle!
+SSL App Data(68:21):/* echoclient.c  */
+
+SSL App Data(70:21):/* echoclient.c  */
+
+SSL App Data(72:2):
+
+SSL App Data(74:2):
+
+SSL App Data(76:26):#include "openssl/ssl.h"
+
+SSL App Data(78:26):#include "openssl/ssl.h"
+
+SSL App Data(80:22):#include "../test.h"
+
+SSL App Data(82:22):#include "../test.h"
+
+SSL App Data(84:2):
+
+SSL App Data(86:2):
+
+SSL App Data(88:2):
+
+SSL App Data(90:2):
+
+SSL App Data(92:33):int main(int argc, char** argv)
+
+SSL App Data(94:33):int main(int argc, char** argv)
+
+SSL App Data(96:3):{
+
+SSL App Data(98:3):{
+
+SSL App Data(100:26):    SOCKET_T sockfd = 0;
+
+SSL App Data(102:26):    SOCKET_T sockfd = 0;
+
+SSL App Data(104:2):
+
+SSL App Data(106:2):
+
+SSL App Data(108:25):    FILE* fin  = stdin;
+
+SSL App Data(110:25):    FILE* fin  = stdin;
+
+SSL App Data(112:26):    FILE* fout = stdout;
+
+SSL App Data(114:26):    FILE* fout = stdout;
+
+SSL App Data(116:2):
+
+SSL App Data(118:2):
+
+SSL App Data(120:25):    int inCreated  = 0;
+
+SSL App Data(122:25):    int inCreated  = 0;
+
+SSL App Data(124:25):    int outCreated = 0;
+
+SSL App Data(126:25):    int outCreated = 0;
+
+SSL App Data(128:2):
+
+SSL App Data(130:2):
+
+SSL App Data(132:22):    char send[1024];
+
+SSL App Data(134:22):    char send[1024];
+
+SSL App Data(136:23):    char reply[1024];
+
+SSL App Data(138:23):    char reply[1024];
+
+SSL App Data(140:2):
+
+SSL App Data(142:2):
+
+SSL App Data(144:29):    SSL_METHOD* method = 0;
+
+SSL App Data(146:29):    SSL_METHOD* method = 0;
+
+SSL App Data(148:29):    SSL_CTX*    ctx    = 0;
+
+SSL App Data(150:29):    SSL_CTX*    ctx    = 0;
+
+SSL App Data(152:29):    SSL*        ssl    = 0;
+
+SSL App Data(154:29):    SSL*        ssl    = 0;
+
+SSL App Data(156:2):
+
+SSL App Data(158:2):
+
+SSL App Data(160:15):#ifdef _WIN32
+
+SSL App Data(162:15):#ifdef _WIN32
+
+SSL App Data(164:18):    WSADATA wsd;
+
+SSL App Data(166:18):    WSADATA wsd;
+
+SSL App Data(168:31):    WSAStartup(0x0002, &wsd);
+
+SSL App Data(170:31):    WSAStartup(0x0002, &wsd);
+
+SSL App Data(172:8):#endif
+
+SSL App Data(174:8):#endif
+
+SSL App Data(176:2):
+
+SSL App Data(178:2):
+
+SSL App Data(180:22):    if (argc >= 2) {
+
+SSL App Data(182:22):    if (argc >= 2) {
+
+SSL App Data(184:38):        fin  = fopen(argv[1], "r"); 
+
+SSL App Data(186:38):        fin  = fopen(argv[1], "r"); 
+
+SSL App Data(188:24):        inCreated = 1;
+
+SSL App Data(190:24):        inCreated = 1;
+
+SSL App Data(192:7):    }
+
+SSL App Data(194:7):    }
+
+SSL App Data(196:22):    if (argc >= 3) {
+
+SSL App Data(198:22):    if (argc >= 3) {
+
+SSL App Data(200:37):        fout = fopen(argv[2], "w");
+
+SSL App Data(202:37):        fout = fopen(argv[2], "w");
+
+SSL App Data(204:25):        outCreated = 1;
+
+SSL App Data(206:25):        outCreated = 1;
+
+SSL App Data(208:7):    }
+
+SSL App Data(210:7):    }
+
+SSL App Data(212:2):
+
+SSL App Data(214:2):
+
+SSL App Data(216:50):    if (!fin)  err_sys("can't open input file");
+
+SSL App Data(218:50):    if (!fin)  err_sys("can't open input file");
+
+SSL App Data(220:51):    if (!fout) err_sys("can't open output file");
+
+SSL App Data(222:51):    if (!fout) err_sys("can't open output file");
+
+SSL App Data(224:2):
+
+SSL App Data(226:2):
+
+SSL App Data(228:27):    tcp_connect(&sockfd);
+
+SSL App Data(230:27):    tcp_connect(&sockfd);
+
+SSL App Data(232:2):
+
+SSL App Data(234:2):
+
+SSL App Data(236:37):    method = SSLv3_client_method();
+
+SSL App Data(238:37):    method = SSLv3_client_method();
+
+SSL App Data(240:35):    ctx    = SSL_CTX_new(method);
+
+SSL App Data(242:35):    ctx    = SSL_CTX_new(method);
+
+SSL App Data(244:2):
+
+SSL App Data(246:2):
+
+SSL App Data(248:71):    if (SSL_CTX_load_verify_locations(ctx, caCert, 0) != SSL_SUCCESS)
+
+SSL App Data(250:71):    if (SSL_CTX_load_verify_locations(ctx, caCert, 0) != SSL_SUCCESS)
+
+SSL App Data(252:40):        err_sys("can't load ca file");
+
+SSL App Data(254:40):        err_sys("can't load ca file");
+
+SSL App Data(256:2):
+
+SSL App Data(258:2):
+
+SSL App Data(260:25):    ssl = SSL_new(ctx);
+
+SSL App Data(262:25):    ssl = SSL_new(ctx);
+
+SSL App Data(264:2):
+
+SSL App Data(266:2):
+
+SSL App Data(268:30):    SSL_set_fd(ssl, sockfd);
+
+SSL App Data(270:30):    SSL_set_fd(ssl, sockfd);
+
+SSL App Data(272:73):    if (SSL_connect(ssl) != SSL_SUCCESS) err_sys("SSL_connect failed");
+
+SSL App Data(274:73):    if (SSL_connect(ssl) != SSL_SUCCESS) err_sys("SSL_connect failed");
+
+SSL App Data(276:2):
+
+SSL App Data(278:2):
+
+SSL App Data(280:46):    while (fgets(send, sizeof(send), fin)) {
+
+SSL App Data(282:46):    while (fgets(send, sizeof(send), fin)) {
+
+SSL App Data(284:2):
+
+SSL App Data(286:2):
+
+SSL App Data(288:41):        int  sendSz = strlen(send) + 1;
+
+SSL App Data(290:41):        int  sendSz = strlen(send) + 1;
+
+SSL App Data(292:2):
+
+SSL App Data(294:2):
+
+SSL App Data(296:53):        if (SSL_write(ssl, send, sendSz) != sendSz)
+
+SSL App Data(298:53):        if (SSL_write(ssl, send, sendSz) != sendSz)
+
+SSL App Data(300:42):            err_sys("SSL_write failed");
+
+SSL App Data(302:42):            err_sys("SSL_write failed");
+
+SSL App Data(304:2):
+
+SSL App Data(306:2):
+
+SSL App Data(308:46):        if (strncmp(send, "quit", 4) == 0) {
+
+SSL App Data(310:46):        if (strncmp(send, "quit", 4) == 0) {
+
+SSL App Data(312:70):            fputs("sending server shutdown command: quit!\n", fout);
+
+SSL App Data(314:70):            fputs("sending server shutdown command: quit!\n", fout);
+
+SSL App Data(316:20):            break;
+
+SSL App Data(318:20):            break;
+
+SSL App Data(320:11):        }
+
+SSL App Data(322:11):        }
+
+SSL App Data(324:2):
+
+SSL App Data(326:2):
+
+SSL App Data(328:55):        if (SSL_read(ssl, reply, sizeof(reply)) > 0) 
+
+SSL App Data(330:55):        if (SSL_read(ssl, reply, sizeof(reply)) > 0) 
+
+SSL App Data(332:33):            fputs(reply, fout);
+
+SSL App Data(334:33):            fputs(reply, fout);
+
+SSL App Data(336:7):    }
+
+SSL App Data(338:7):    }
+
+SSL App Data(340:2):
+
+SSL App Data(342:2):
+
+SSL App Data(344:24):    SSL_shutdown(ssl);
+
+SSL App Data(346:24):    SSL_shutdown(ssl);
+
+SSL App Data(348:20):    SSL_free(ssl);
+
+SSL App Data(350:20):    SSL_free(ssl);
+
+SSL App Data(352:24):    SSL_CTX_free(ctx);
+
+SSL App Data(354:24):    SSL_CTX_free(ctx);
+
+SSL App Data(356:2):
+
+SSL App Data(358:2):
+
+SSL App Data(360:19):    fflush(fout);
+
+SSL App Data(362:19):    fflush(fout);
+
+SSL App Data(364:34):    if (inCreated)  fclose(fin);
+
+SSL App Data(366:34):    if (inCreated)  fclose(fin);
+
+SSL App Data(368:35):    if (outCreated) fclose(fout);
+
+SSL App Data(370:35):    if (outCreated) fclose(fout);
+
+SSL App Data(372:2):
+
+SSL App Data(374:2):
+
+SSL App Data(376:15):#ifdef _WIN32
+
+SSL App Data(378:15):#ifdef _WIN32
+
+SSL App Data(380:26):    closesocket(sockfd);
+
+SSL App Data(382:26):    closesocket(sockfd);
+
+SSL App Data(384:7):#else
+
+SSL App Data(386:7):#else
+
+SSL App Data(388:20):    close(sockfd);
+
+SSL App Data(390:20):    close(sockfd);
+
+SSL App Data(392:8):#endif
+
+SSL App Data(394:8):#endif
+
+SSL App Data(396:2):
+
+SSL App Data(398:2):
+
+SSL App Data(400:15):    return 0;
+
+SSL App Data(402:15):    return 0;
+
+SSL App Data(404:3):}
+
+SSL App Data(406:3):}
+
+SSL App Data(408:2):
+
+SSL App Data(410:2):
+
+SSL App Data(412:2):
+
+SSL App Data(414:2):
+
+SSL App Data(449:5):quit
+
+-e 
+Success!
+
