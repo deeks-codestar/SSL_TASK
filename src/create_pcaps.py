@@ -20,12 +20,13 @@ def walk_directory_paths_and_construct_url_path(root_dir_path):
  		for root, subdirs, files in os.walk(root_dir_path):
  			for filename in files:
  				file_path = os.path.join(root, filename)
- 				file_list.append("/" + file_path[skip_path_len:])
+ 				file_list.append(file_path[skip_path_len:])
 
  			for subdir in subdirs:
  				file_path = os.path.join(root, subdir)
- 				file_list.append("/" + file_path[skip_path_len:])
+ 				file_list.append(file_path[skip_path_len:])
 
+	print file_list
  	return file_list
 
 #Pick a random number of urls 
@@ -177,7 +178,7 @@ if __name__ == "__main__":
 		server_port += 1;
 		server_cipher_index = 0;
 	
-		url_list = walk_directory_paths_and_construct_url_path('/home/deeks/Desktop/SSL_Task/html_files')
+		url_list = walk_directory_paths_and_construct_url_path('/home/deeks/Desktop/SSL_TASK/html_files')
 		print url_list
 		rand_no_of_urls = 3
 		random_url_list = pick_random_url(url_list, rand_no_of_urls)
@@ -187,14 +188,15 @@ if __name__ == "__main__":
 		pcap_process = start_capture_in_background("lo", "/home/deeks/Desktop/abc.pcap")
 		print "===============================\n"
 		for url in random_url_list:	
-			cmd = 'wget https://localhost:8443/' + url + ' --no-check-certificate --bind-address 127.0.0.2'
+			cmd = 'wget https://localhost:8443' + url + ' --no-check-certificate --bind-address 127.0.0.2'
 			os.system(cmd)
+			time.sleep(10)
 			print cmd	
 		stop_capture(pcap_process)
-		rewrite_pcap_with_new_srcip_address('127.0.0.2', '192.168.0.1', '/home/deeks/Desktop/new.pcap', '/home/deeks/Desktop/new.pcap')
-		rewrite_pcap_with_new_dstip_address('127.0.0.2', '192.168.0.1', '/home/deeks/Desktop/new.pcap', '/home/deeks/Desktop/new.pcap')
-		rewrite_pcap_with_new_dstip_address('127.0.0.1', '10.10.1.1', '/home/deeks/Desktop/new.pcap', '/home/deeks/Desktop/new.pcap')
-		rewrite_pcap_with_new_srcip_address('127.0.0.1', '10.10.1.1', '/home/deeks/Desktop/new.pcap', '/home/deeks/Desktop/new.pcap')
+		#rewrite_pcap_with_new_srcip_address('127.0.0.2', '192.168.0.1', '/home/deeks/Desktop/new.pcap', '/home/deeks/Desktop/new.pcap')
+		#rewrite_pcap_with_new_dstip_address('127.0.0.2', '192.168.0.1', '/home/deeks/Desktop/new.pcap', '/home/deeks/Desktop/new.pcap')
+		#rewrite_pcap_with_new_dstip_address('127.0.0.1', '10.10.1.1', '/home/deeks/Desktop/new.pcap', '/home/deeks/Desktop/new.pcap')
+		#rewrite_pcap_with_new_srcip_address('127.0.0.1', '10.10.1.1', '/home/deeks/Desktop/new.pcap', '/home/deeks/Desktop/new.pcap')
 
 	
 	#start_server("127.0.0.1", 443, "/home/deeks/Desktop/SSL_Task/OpenSSL/testkey.pem",  "/home/deeks/Desktop/SSL_Task/OpenSSL/testcert.pem");
